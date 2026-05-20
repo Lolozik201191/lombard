@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ломбард ДЛЯ ВАС | Сеть надёжных ломбардов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #2A1B12;
+            color: #FFFFFF;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #D4AF37;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .subhead {
+            font-size: 1.25rem;
+            color: #E0C87C;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: #DDD;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 48px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #D4AF37;
+            color: #1F1409;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #E5C158;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #E5C158;
+            color: #E5C158;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1f1309 0%, #2A1B12 100%);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        /* ЛОГОТИП */
+        .logo {
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        .logo-sub {
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            color: #D4AF37;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .logo-main {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin: 5px 0 2px;
+        }
+        .logo-main span {
+            color: #D4AF37;
+        }
+        .logo-bottom {
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            color: #E0C87C;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .card {
+            background-color: #3A281D;
+            border: 1px solid #D4AF37;
+            border-radius: 28px;
+            padding: 32px 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: #DDD;
+            margin-top: 12px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .trust-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: rgba(58, 40, 29, 0.6);
+            padding: 18px;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+        }
+
+        .trust-item i {
+            font-size: 2rem;
+            color: #D4AF37;
+            min-width: 44px;
+        }
+
+        .calculator-box {
+            background: #3A281D;
+            border-radius: 32px;
+            padding: 36px 28px;
+            border: 1px solid #D4AF37;
+            max-width: 650px;
+            margin: 30px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #F5E2B0;
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: #24170E;
+            border: 1px solid #5E4A36;
+            border-radius: 24px;
+            font-size: 1rem;
+            color: white;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: #D4AF37;
+        }
+
+        .calc-result {
+            background: #1F1409;
+            border-radius: 40px;
+            padding: 16px 24px;
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        .calc-result span {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #D4AF37;
+        }
+
+        .small-note {
+            font-size: 0.75rem;
+            color: #aaa;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .office-card {
+            background: #3A281D;
+            border: 1px solid #D4AF37;
+            border-radius: 24px;
+            padding: 24px;
+        }
+
+        .office-card p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .office-card i {
+            width: 24px;
+            color: #D4AF37;
+        }
+
+        .route-btn {
+            margin-top: 16px;
+            background: none;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            padding: 8px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .route-btn:hover {
+            background: #D4AF37;
+            color: #1F1409;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+
+        .review-card {
+            background: #3A281D;
+            border-radius: 28px;
+            padding: 28px;
+            border: 1px solid #D4AF37;
+            font-style: italic;
+        }
+
+        .review-card i {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .contacts-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+            margin-top: 24px;
+        }
+
+        .contacts-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-line i {
+            width: 32px;
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+
+        .contact-line a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted #D4AF37;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            min-width: 260px;
+        }
+
+        .footer {
+            background-color: #1A0F08;
+            padding: 48px 0 32px;
+            text-align: center;
+            border-top: 1px solid #3A281D;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+        .footer-logo span {
+            color: #D4AF37;
+        }
+        .footer-tagline {
+            margin: 12px 0;
+            color: #BAA77A;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.9rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .logo-main {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <!-- Логотип по вашему файлу -->
+            <div class="logo">
+                <div class="logo-sub">СЕТЬ НАДЕЖНЫХ ЛОМБАРДОВ</div>
+                <div class="logo-main">JOMBAPL<span>ДЛЯ ВАС</span></div>
+                <!-- если нужна третья строка — оставим как доп, либо уже слитно -->
+                <div class="logo-bottom">ДЛЯ ВАС</div>
+            </div>
+            <p style="font-size: 1.2rem; margin: 16px 0 20px;">Мы работаем честно, открыто и всегда идём навстречу.<br>
+            Если вам нужно быстро получить деньги под залог — мы рядом.</p>
+            <div class="hero-buttons">
+                <a href="#calculator-section" class="btn btn-primary">Оценить изделие онлайн</a>
+                <a href="#offices-section" class="btn btn-outline">Адреса отделений</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- О КОМПАНИИ -->
+<section>
+    <div class="container">
+        <h2>О компании</h2>
+        <p style="font-size: 1.1rem; max-width: 850px; margin-bottom: 24px;">Мы — сеть ломбардов «ДЛЯ ВАС».<br>
+        Работаем просто: честная оценка, прозрачные условия, никаких скрытых комиссий.<br>
+        Вы приносите ценность — мы выдаём деньги сразу.<br>
+        Ваши вещи хранятся в безопасности, под охраной и видеонаблюдением.</p>
+        <p style="font-size: 1.1rem; max-width: 850px; margin-bottom: 28px;">Мы понимаем, что иногда деньги нужны срочно.<br>
+        И наша задача — помочь без лишних вопросов.</p>
+        <a href="#" class="btn btn-outline" style="border-color:#D4AF37;">Подробнее о компании</a>
+    </div>
+</section>
+
+<!-- УСЛУГИ (только драгметаллы) -->
+<section>
+    <div class="container">
+        <h2>Наши услуги</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-gem"></i>
+                <h3>Займ под залог золота</h3>
+                <p>Оценим за 2 минуты. Деньги выдаём сразу. Изделие остаётся в надёжном сейфе.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-ring"></i>
+                <h3>Займ под залог серебра</h3>
+                <p>Принимаем монеты, столовые приборы, украшения. Честная оценка, быстрое оформление.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-coins"></i>
+                <h3>Выкуп золота</h3>
+                <p>Покупаем дорого — до 95% от биржевой цены. Оплата сразу на месте.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- КАЛЬКУЛЯТОР -->
+<section id="calculator-section">
+    <div class="container">
+        <h2 style="text-align:center;">Узнайте сумму за 30 секунд</h2>
+        <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">Просто выберите металл, пробу и укажите вес</p>
+        <div class="calculator-box">
+            <div class="form-group">
+                <label>Металл</label>
+                <select id="metalSelect">
+                    <option value="gold">Золото</option>
+                    <option value="silver">Серебро</option>
+                    <option value="platinum">Платина</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Проба</label>
+                <select id="puritySelect">
+                    <option value="375">375</option>
+                    <option value="500">500</option>
+                    <option value="585" selected>585</option>
+                    <option value="750">750</option>
+                    <option value="999">999</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Вес (граммы)</label>
+                <input type="number" id="weightInput" step="0.1" value="5.0" placeholder="Например, 5.2">
+            </div>
+            <div class="calc-result">
+                💰 Примерная сумма займа: <span id="loanAmount">0 ₽</span>
+            </div>
+            <button class="btn btn-primary" id="calcTrigger" style="width:100%;">Получить точную оценку в отделении</button>
+            <div class="small-note">*Окончательная сумма после взвешивания и проверки. Цена за грамм обновляется ежедневно по курсу ЦБ.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ПОЧЕМУ НАМ ДОВЕРЯЮТ -->
+<section>
+    <div class="container">
+        <h2>Почему нам доверяют</h2>
+        <div class="trust-grid">
+            <div class="trust-item"><i class="fas fa-balance-scale"></i> <span>Честная оценка — всё показываем и объясняем</span></div>
+            <div class="trust-item"><i class="fas fa-bolt"></i> <span>Быстрая выдача денег — без ожиданий и очередей</span></div>
+            <div class="trust-item"><i class="fas fa-shield-alt"></i> <span>Надёжное хранение — охрана, сейфы, видеонаблюдение</span></div>
+            <div class="trust-item"><i class="fas fa-file-signature"></i> <span>Официальная работа — договор, чек, прозрачные условия</span></div>
+            <div class="trust-item"><i class="fas fa-user-secret"></i> <span>Конфиденциальность — ваши данные не передаются третьим лицам</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ОНЛАЙН ОЦЕНКА ФОТО -->
+<section>
+    <div class="container">
+        <h2>Не нашли свой тип изделия в калькуляторе?</h2>
+        <p class="section-desc">Пришлите фото — мы оценим изделие с камнями, сложную форму или часы.</p>
+        <a href="#" class="btn btn-primary" style="background-color:#D4AF37; color:#1F1409;">📸 Отправить фото для оценки</a>
+    </div>
+</section>
+
+<!-- АДРЕСА ОТДЕЛЕНИЙ -->
+<section id="offices-section" style="background: #3A281D;">
+    <div class="container">
+        <h2 style="color:#D4AF37;">Адреса отделений</h2>
+        <div class="offices-grid" style="margin-top: 32px;">
+            <div class="office-card">
+                <p><i class="fas fa-map-marker-alt"></i> ул. Центральная, 15</p>
+                <p><i class="far fa-clock"></i> Пн–Пт: 09:00–20:00, Сб–Вс: 10:00–18:00</p>
+                <p><i class="fas fa-phone-alt"></i> +7 (999) 123-45-67</p>
+                <button class="route-btn" onclick="alert('Маршрут построен')">Построить маршрут</button>
+            </div>
+            <div class="office-card">
+                <p><i class="fas fa-map-marker-alt"></i> пр. Мира, 88Б</p>
+                <p><i class="far fa-clock"></i> Ежедневно: 09:00–21:00</p>
+                <p><i class="fas fa-phone-alt"></i> +7 (999) 765-43-21</p>
+                <button class="route-btn" onclick="alert('Маршрут построен')">Построить маршрут</button>
+            </div>
+            <div class="office-card">
+                <p><i class="fas fa-map-marker-alt"></i> ул. Ленина, 7</p>
+                <p><i class="far fa-clock"></i> Пн–Пт: 10:00–19:00, Сб: 10:00–16:00</p>
+                <p><i class="fas fa-phone-alt"></i> +7 (999) 987-65-43</p>
+                <button class="route-btn" onclick="alert('Маршрут построен')">Построить маршрут</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section>
+    <div class="container">
+        <h2>Отзывы клиентов</h2>
+        <div class="reviews-grid">
+            <div class="review-card"><i class="fas fa-quote-left"></i> <p>«Оценили честно, всё быстро и без лишних разговоров.»</p> <span style="color:#D4AF37;">— Анна</span></div>
+            <div class="review-card"><i class="fas fa-quote-left"></i> <p>«Приятные сотрудники, всё объяснили, деньги получил сразу.»</p> <span style="color:#D4AF37;">— Дмитрий</span></div>
+            <div class="review-card"><i class="fas fa-quote-left"></i> <p>«Хранили мои украшения аккуратно, забрала в идеальном состоянии.»</p> <span style="color:#D4AF37;">— Елена</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок ЛИЦЕНЗИИ -->
+<section>
+    <div class="container">
+        <h2>Работаем по закону. У нас есть лицензия.</h2>
+        <p class="subhead">Сеть ломбардов «ДЛЯ ВАС» — легальная и прозрачная работа с драгметаллами</p>
+        <div class="trust-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px,1fr));">
+            <div class="trust-item"><i class="fas fa-certificate"></i> <span>Лицензия на работу с драгметаллами — выдана Федеральной пробирной палатой</span></div>
+            <div class="trust-item"><i class="fas fa-file-invoice"></i> <span>Каждый клиент получает договор и кассовый чек</span></div>
+            <div class="trust-item"><i class="fas fa-gavel"></i> <span>Соблюдаем 115-ФЗ (противодействие легализации доходов)</span></div>
+            <div class="trust-item"><i class="fas fa-lock"></i> <span>Персональные данные защищены по 152-ФЗ</span></div>
+            <div class="trust-item"><i class="fas fa-print"></i> <span>Контрольно-кассовая техника зарегистрирована в ФНС</span></div>
+        </div>
+        <div class="small-note" style="margin-top: 30px; text-align:center;">Лицензия № ЛО-77-001234 от 15.05.2023</div>
+    </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section>
+    <div class="container">
+        <h2>Контакты</h2>
+        <div class="contacts-row">
+            <div class="contacts-info">
+                <div class="contact-line"><i class="fas fa-phone-alt"></i> <a href="tel:+79991234567">+7 (999) 123-45-67</a></div>
+                <div class="contact-line"><i class="fab fa-whatsapp"></i> <a href="#">WhatsApp</a></div>
+                <div class="contact-line"><i class="fab fa-telegram"></i> <a href="#">Telegram</a></div>
+                <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:info@lombard-dlyavas.ru">info@lombard-dlyavas.ru</a></div>
+            </div>
+            <div class="contact-form">
+                <form id="callbackForm">
+                    <div class="form-group"><label>Имя</label><input type="text" placeholder="Как к вам обращаться?"></div>
+                    <div class="form-group"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__"></div>
+                    <div class="form-group"><label>Сообщение</label><textarea rows="3" placeholder="Ваш вопрос..."></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Связаться с нами</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-logo">JOMBAPL<span>ДЛЯ ВАС</span></div>
+        <div class="footer-tagline">«Работаем честно. Всегда рядом.»</div>
+        <div style="font-size: 0.8rem; color: #7A6246; margin-top: 24px;">© 2026 Ломбард ДЛЯ ВАС. Все права защищены.</div>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        const basePrices = { gold: 6500, silver: 85, platinum: 3500 };
+        const purityFactor = { 375: 0.375, 500: 0.5, 585: 0.585, 750: 0.75, 999: 0.999 };
+        const LOAN_PERCENT = 0.72;
+
+        function calculateLoan() {
+            const metal = document.getElementById('metalSelect').value;
+            const purity = parseFloat(document.getElementById('puritySelect').value);
+            let weight = parseFloat(document.getElementById('weightInput').value);
+            if (isNaN(weight) || weight <= 0) weight = 0;
+            let basePrice = basePrices[metal] || 0;
+            const purityVal = purityFactor[purity] || 0.585;
+            const estimatedValue = basePrice * purityVal * weight;
+            const loanAmount = Math.floor(estimatedValue * LOAN_PERCENT);
+            document.getElementById('loanAmount').innerText = loanAmount.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        const metalSel = document.getElementById('metalSelect');
+        const puritySel = document.getElementById('puritySelect');
+        const weightInp = document.getElementById('weightInput');
+        const calcBtn = document.getElementById('calcTrigger');
+
+        if (metalSel) metalSel.addEventListener('change', calculateLoan);
+        if (puritySel) puritySel.addEventListener('change', calculateLoan);
+        if (weightInp) weightInp.addEventListener('input', calculateLoan);
+        if (calcBtn) calcBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Спасибо! Наш специалист свяжется для уточнения деталей или вы можете посетить любое отделение для точной оценки.');
+        });
+        calculateLoan();
+
+        const form = document.getElementById('callbackForm');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Заявка отправлена! Менеджер свяжется с вами в ближайшее время.');
+                form.reset();
+            });
+        }
+    })();
+</script>
+</body>
+</html>
